@@ -1,3 +1,4 @@
-# Sample HDL Project
+# FIR Audio Filter Projecta
 
-Will port over the FIR filter and add my DES example I was working on
+Copy of my FIR audio filter project I made at Olin College of Engineering before
+transferring to UMass Amherst.
