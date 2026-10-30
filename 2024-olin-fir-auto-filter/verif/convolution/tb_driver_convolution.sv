@@ -41,6 +41,7 @@ module tb_driver_convolution (
    logic [NINPUT-1:0]  sample_b_vector [NSAMPLES-1:0];
    // Too large but it needs to be pre-defined size.
    logic [NOUTPUT-1:0] conv_out_vector [NSAMPLES-1:0];
+   string    EXPECTED = "        Expected: ";
 
    // Generate clock
    always #(CLOCK_PERIOD/2) clk <= ~clk;
@@ -166,8 +167,6 @@ module tb_driver_convolution (
 
    // FIXME dih: considering how these are copied into all testbenches, maybe
    // we should have a verification library.
-   string    EXPECTED = "        Expected: ";
-
    function int print_header(string s);
       $display("");
       $display("################################################");

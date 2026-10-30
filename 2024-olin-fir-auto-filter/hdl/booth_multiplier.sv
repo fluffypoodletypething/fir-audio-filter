@@ -24,6 +24,10 @@ module booth_multiplier(/*AUTOARG*/
 
    logic [$clog2(N):0] count;
 
+   logic signed [N-1:0] accumulator_out;
+   logic signed [N-1:0] multiplier_out;
+   logic                prev_lsb_out;         // From booth of booth_stage_radix2.v
+
    assign product = {accumulator_out, multiplier_out};
    always_ff @(posedge clk) begin
       if (rst) begin
@@ -56,10 +60,7 @@ module booth_multiplier(/*AUTOARG*/
 
    /*AUTOWIRE*/
    // Beginning of automatic wires (for undeclared instantiated-module outputs)
-   logic signed [N-1:0] accumulator_out;        // From booth of booth_stage_radix2.v
    logic signed [N-1:0] multiplicand_out;       // From booth of booth_stage_radix2.v
-   logic signed [N-1:0] multiplier_out;         // From booth of booth_stage_radix2.v
-   logic                prev_lsb_out;           // From booth of booth_stage_radix2.v
    // End of automatics
 
    booth_stage_radix2 #(.N(N)) booth (.multiplicand_in  (multiplicand),

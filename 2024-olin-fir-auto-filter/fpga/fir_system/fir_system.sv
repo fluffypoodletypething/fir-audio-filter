@@ -45,6 +45,10 @@ module fir_system (
     // Buttons
     logic rst;
     logic loopback;
+    logic button_1_positive;
+    logic [15:0] rsamp_reg, lsamp_reg;
+    logic fir_ena;
+    logic [15:0] fir_r_out, fir_l_out;
     always_comb rst = buttons[0];
     always_comb leds[0] = loopback;
 
@@ -104,9 +108,6 @@ module fir_system (
     );
 
     // Loopback test
-    logic button_1_positive;
-    logic fir_ena;
-    logic [15:0] rsamp_reg, lsamp_reg;
     always_ff @(posedge m_clk) begin
       if (rst) begin 
         loopback <= 0;
@@ -126,8 +127,6 @@ module fir_system (
     end
 
     // FIR filters
-    logic [15:0] fir_r_out, fir_l_out;
-
     fir_filter #(
       .FIR_VECTOR(FIR_VECTOR), 
       .FILTER_SHIFT_AMOUNT(16),

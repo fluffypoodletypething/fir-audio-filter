@@ -26,6 +26,8 @@ module fir_filter(/*AUTOARG*/
    output logic [SAMPLE_WIDTH-1:0] fir_out;
 
    // output logic [SAMPLE_WIDTH-1:0] fir_out; // For when we get saturation
+   logic [SAMPLE_WIDTH-1:0] conv_out_saturate;
+   wire [NCONV_OUTPUT-1:0] conv_out;
 
    always_ff @(posedge clk) begin : output_buffer
       if (rst) begin
@@ -36,9 +38,7 @@ module fir_filter(/*AUTOARG*/
          fir_out <= conv_out_saturate;
       end
    end : output_buffer
-
    logic [NCONV_OUTPUT-1:0] conv_out_shifted;
-   logic [SAMPLE_WIDTH-1:0] conv_out_saturate;
    always_comb begin
       conv_out_shifted = (conv_out >>> FILTER_SHIFT_AMOUNT);
    end
@@ -73,7 +73,6 @@ module fir_filter(/*AUTOARG*/
       .data (impulse),
       .clk  (clk));
 
-   wire [NCONV_OUTPUT-1:0]    conv_out;
    wire                       conv_valid;
    convolution #(.NSAMPLES(NSAMPLES), .NINPUT(SAMPLE_WIDTH)) convolver
      (// Outputs
