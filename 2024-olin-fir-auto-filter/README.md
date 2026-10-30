@@ -13,10 +13,25 @@ FPGA development board with a
 attached to it. It should work with other Xilinx FPGA boards, but you will need
 to provide your own XDC.
 
-## Building a Bitstream with `sim.py`
+# `sim.py`
 
-Our `sim.py` tool does more than just run simulations; it also can synthesize
-and flash a bitstream.
+
+`sim.py` is a Python wrapper around simulation and synthesis tools. It uses
+`iverilog` as the simulator and `vivado` for synthesis. It has been confirmed to
+work with iverilog 14.0 as of October 30, 2026.
+
+I no longer have access to the Xilinx FPGA dev board, so I am not able to confirm if
+the latest Vivado works. It worked at the start of 2024.
+
+## Simulating a Testbench with `sim.py`
+
+You can run a testbench with `sim.py -br verif/testbench_name/`
+- `-b` "build", recompile the testbench
+- `-r` "run", run the simulation
+
+For example, to test the top level system `sim.py -br verif/fir_filter/`
+
+## Building a Bitstream with `sim.py`
 
 To build the bitstream for the full system
 
