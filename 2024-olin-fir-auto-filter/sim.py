@@ -170,7 +170,10 @@ def compile_testbench(parsed, sim_env):
     """
     Compile testbench based on arguments with iverilog.
     """
-    defines = parsed.define_macro + [f"TESTBENCH_ROOT=\"{sim_env['TESTBENCH_ROOT']}\""]
+    defines = parsed.define_macro + [
+        f"HDL_ROOT=\"{sim_env['HDL_ROOT']}\"",
+        f"TESTBENCH_ROOT=\"{sim_env['TESTBENCH_ROOT']}\"",
+    ]
     defines = [f"-D{x}" for x in defines]
     testbench_file_path = os.path.join(sim_env["TESTBENCH_ROOT"], parsed.testbench_name)
 

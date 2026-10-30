@@ -3,14 +3,23 @@
 
 // Defined in command file; here to silence linter
 `ifndef HDL_ROOT
-`define HDL_ROOT "foobar"
+`define HDL_ROOT "__MISSING_HDL_ROOT__"
+`define MISSING_HDL_ROOT
 `endif
 
 `ifndef TESTBENCH_ROOT
-`define TESTBENCH_ROOT "foobar"
+`define TESTBENCH_ROOT "__MISSING_TESTBENCH_ROOT__"
+`define MISSING_TESTBENCH_ROOT
 `endif
 
 module test_fir_filter;
+
+`ifdef MISSING_HDL_ROOT
+   initial $fatal(1, "HDL_ROOT must be defined by the simulation command");
+`endif
+`ifdef MISSING_TESTBENCH_ROOT
+   initial $fatal(1, "TESTBENCH_ROOT must be defined by the simulation command");
+`endif
 
    // For the band pass filter "band_pass_50_8000.memh"
    parameter MEM_ROOT = {`HDL_ROOT, "/mems"};

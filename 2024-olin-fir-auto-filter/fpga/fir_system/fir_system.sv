@@ -3,7 +3,8 @@
 
 // Defined in command file; here to silence linter
 `ifndef HDL_ROOT
-`define HDL_ROOT "foobar"
+`define HDL_ROOT "__MISSING_HDL_ROOT__"
+`define MISSING_HDL_ROOT
 `endif
 
 module fir_system (
@@ -16,6 +17,10 @@ module fir_system (
     // Inputs
     buttons, clk, sda_rx
     );
+
+`ifdef MISSING_HDL_ROOT
+    initial $fatal(1, "HDL_ROOT must be defined by the synthesis command");
+`endif
 
     // Parameters
     parameter MEM_ROOT = {`HDL_ROOT, "/mems/"};
