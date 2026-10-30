@@ -1,0 +1,112 @@
+[*]
+[*] GTKWave Analyzer v4.0.0-prealpha (f6d60e0) (w)1999-2022 BSI
+[*] Fri Oct 30 18:24:30 2026
+[*]
+[dumpfile] "/home/rose/Projects/example-hdl-project/2024-olin-fir-auto-filter/build-hdl/fir_filter.fst"
+[dumpfile_mtime] "Fri Oct 30 18:22:59 2026"
+[dumpfile_size] 579053129
+[savefile] "/home/rose/Projects/example-hdl-project/2024-olin-fir-auto-filter/wave_confs/fir-filter.gtkw"
+[timestart] 526080000000
+[size] 2032 1195
+[pos] -7 -4
+*-31.000000 900000000000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[markername] AA
+[markername] BB
+[markername] CC
+[markername] DD
+[markername] EE
+[markername] FF
+[markername] GG
+[markername] HH
+[markername] II
+[markername] JJ
+[markername] KK
+[markername] LL
+[markername] MM
+[markername] NN
+[markername] OO
+[markername] PP
+[markername] QQ
+[markername] RR
+[markername] SS
+[markername] TT
+[markername] UU
+[markername] VV
+[markername] WW
+[markername] XX
+[markername] YY
+[markername] ZZ
+[treeopen] test_fir_filter.
+[treeopen] test_fir_filter.DUT.
+[sst_width] 297
+[signals_width] 191
+[sst_expanded] 1
+[sst_vpaned_height] 356
+@200
+-fir filter
+@28
+test_fir_filter.DUT.clk
+@22
+test_fir_filter.DUT.conv_out[37:0]
+test_fir_filter.DUT.conv_out_saturate[15:0]
+test_fir_filter.DUT.conv_out_shifted[37:0]
+@28
+test_fir_filter.DUT.conv_ready
+test_fir_filter.DUT.conv_valid
+test_fir_filter.DUT.ena
+@22
+test_fir_filter.DUT.fir_out[15:0]
+test_fir_filter.DUT.impulse[15:0]
+@28
+test_fir_filter.DUT.rst
+@22
+test_fir_filter.DUT.sample[15:0]
+test_fir_filter.DUT.sample_in[15:0]
+test_fir_filter.DUT.sample_sel[5:0]
+test_fir_filter.DUT.shift_reg[767:0]
+@200
+-fir vector
+@23
+test_fir_filter.DUT.fir_vector.addr[5:0]
+@29
+test_fir_filter.DUT.fir_vector.clk
+@23
+test_fir_filter.DUT.fir_vector.data[15:0]
+@200
+-convolver
+@22
+test_fir_filter.DUT.convolver.accum[37:0]
+@28
+test_fir_filter.DUT.convolver.accum_ena
+test_fir_filter.DUT.convolver.accum_rst
+test_fir_filter.DUT.convolver.clk
+@22
+test_fir_filter.DUT.convolver.conv_out[37:0]
+@28
+test_fir_filter.DUT.convolver.conv_ready
+test_fir_filter.DUT.convolver.conv_valid
+test_fir_filter.DUT.convolver.mult_ena
+test_fir_filter.DUT.convolver.mult_ready
+test_fir_filter.DUT.convolver.mult_rst
+test_fir_filter.DUT.convolver.mult_valid
+@22
+test_fir_filter.DUT.convolver.next_sample_sel[5:0]
+@28
+test_fir_filter.DUT.convolver.next_state[1:0]
+@22
+test_fir_filter.DUT.convolver.next_valid_counter[5:0]
+test_fir_filter.DUT.convolver.product[31:0]
+test_fir_filter.DUT.convolver.product_ext[37:0]
+@28
+test_fir_filter.DUT.convolver.rst
+@22
+test_fir_filter.DUT.convolver.sample_a[15:0]
+test_fir_filter.DUT.convolver.sample_b[15:0]
+test_fir_filter.DUT.convolver.sample_sel[5:0]
+@28
+test_fir_filter.DUT.convolver.state[1:0]
+@22
+test_fir_filter.DUT.convolver.sum[37:0]
+test_fir_filter.DUT.convolver.valid_counter[5:0]
+[pattern_trace] 1
+[pattern_trace] 0
