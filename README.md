@@ -1,4 +1,4 @@
-# FIR Audio Filter Projecta
+# FIR Audio Filter Project
 
 Copy of my FIR audio filter project I made at Olin College of Engineering before
 transferring to UMass Amherst.
