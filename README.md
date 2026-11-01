@@ -12,13 +12,13 @@ transferring to UMass Amherst.
 
 # Waveforms
 
-!()[./screenshots/pipelined-booth-waves.png]
+![](./screenshots/pipelined-booth-waves.png)
 Waveform from the pipelined multiplier testbench. The testbench instantiates the
 multiplier with the bit parameter set to five bits and runs through the times
 table.
 
 
-!()[./screenshots/fir-filter-waves.png]
+![](./screenshots/fir-filter-waves.png)
 Waveform from the entire FIR filter system. The testbench runs 1 seconds worth
 of audio samples through the filter and compares it to a pre-generated vector
 made with SciPy.
