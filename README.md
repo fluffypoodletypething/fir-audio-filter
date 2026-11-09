@@ -1,7 +1,9 @@
 # FIR Audio Filter Project
 
 Copy of my FIR audio filter project I made at Olin College of Engineering before
-transferring to UMass Amherst.
+transferring to UMass Amherst. This was originally a team project; I was responsible
+the system architecture, implementation of the multiplier and convolution unit,
+and writing the script for simulation and synthesis.
 
 # Repo Layout
 
